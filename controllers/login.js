@@ -8,7 +8,7 @@ const loginController = async (req, res) => {
     // console.log('user: ',user);
     res.status(200).send({
       ok: valid,
-      user: user.fullname,
+      user: valid ? user.fullname: "Wrong username or password",
     });
   } catch (error) {
     res.status(400).send({
