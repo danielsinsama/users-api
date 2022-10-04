@@ -16,3 +16,13 @@ Ejecutar este comando general:
 ## Para visualizar la documentación
 Se utilizó JSDoc, para la documentación de esta prueba, y se desarrolló con este comando:
 ``npm run docs``
+
+## Para que ejecuten las variables de entorno
+
+Crear un archivo .env con las siguientes variables de entorno
+
+DBHOST=
+DBPORT=
+DBNAME=
+DBUSER=interview
+DBPASSWORD=

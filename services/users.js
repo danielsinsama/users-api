@@ -1,4 +1,4 @@
-const {pool} = require('../database/config')
+const {pool,completeEnv} = require('../database/config')
 /**
  * @module servicesModule
  */
@@ -9,6 +9,8 @@ const {pool} = require('../database/config')
  */
 const selectUserByUsername = (username) => {
     return new Promise((resolve, reject) => {
+        if(!completeEnv)
+            return reject("No se ha encontrado configuracion en variables de entorno");
         const sql = `SELECT * FROM Users WHERE username = "${username}"`;
         pool.query(sql, (error, elements) => {
             if (error) return reject(error);

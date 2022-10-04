@@ -8,6 +8,7 @@ const config = {
   user: process.env.DBUSER,
   password: process.env.DBPASSWORD,
 };
+const completeEnv = process.env.DBHOST || process.env.DBPORT ||process.env.DBNAME || process.env.DBNAME||process.env.DBPASSWORD 
 const pool = mysql.createPool(config);
 
-module.exports = { pool } 
+module.exports = { pool,completeEnv } 
