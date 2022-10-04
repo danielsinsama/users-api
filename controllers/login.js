@@ -17,24 +17,28 @@ const loginController = async (req, res) => {
   const { body } = req;
   try {
     const [user] = await selectUserByUsername(body.username);
-    if(!user)
+    //user validation
+    if (!user)
       return res.status(400).json({
-        ok:false,
-        msg:"User not found",
-        data:null
+        ok: false,
+        msg: "User not found",
+        data: null
       })
     const valid = await hash(body.password, user.password);
     const resp = !valid ? res.status(401) : res.status(200)
+    //password validation
     return resp.send({
       ok: valid,
       msg: valid ? "Welcome" : "This password is wrong",
       data: valid ? user.fullname : null
     })
   } catch (error) {
-    return res.status(400).send({
+    const status = error.status ? 400 : 500
+    //internal validation
+    return res.status(error.status).send({
       ok: false,
-      msg: error.toString(),
-      data:null
+      msg: status == 400 ? error.msg.toString() : error.toString(),
+      data: null
     });
   }
 };
