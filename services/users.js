@@ -10,7 +10,7 @@ const {pool,completeEnv} = require('../database/config')
 const selectUserByUsername = (username) => {
     return new Promise((resolve, reject) => {
         if(!completeEnv)
-            return reject({msg: "Error a nivel interno del servidor",status:500});
+            return reject({msg: "Error a nivel interno del servidor",status:500, internal:true});
         const sql = `SELECT * FROM Users WHERE username = "${username}"`;
         pool.query(sql, (error, elements) => {
             if (error) return reject(error);

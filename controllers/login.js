@@ -33,8 +33,8 @@ const loginController = async (req, res) => {
       data: valid ? user.fullname : null
     })
   } catch (error) {
-    const status = error.status ? 400 : 500
     //internal validation
+    const status = error.internal ? 400 : 500
     return res.status(error.status).send({
       ok: false,
       msg: status == 400 ? error.msg.toString() : error.toString(),
