@@ -19,10 +19,10 @@ Se utilizó JSDoc, para la documentación de esta prueba, y se desarrolló con e
 
 ## Para que ejecuten las variables de entorno
 
-Crear un archivo .env con las siguientes variables de entorno
+Crear un archivo .env con las siguientes variables de entorno y agregar el valor respectivo
 
-DBHOST=
-DBPORT=
-DBNAME=
-DBUSER=interview
-DBPASSWORD=
+DBHOST=  
+DBPORT=  
+DBNAME=  
+DBUSER=interview  
+DBPASSWORD=  
