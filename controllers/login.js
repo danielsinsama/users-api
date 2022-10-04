@@ -5,13 +5,13 @@ const loginController = async (req, res) => {
   try {
     const [user] = await selectUserByUsername(body.username);
     const valid = await hash(body.password, user.password);
-    res.status(200).send({
+    return res.status(200).send({
       ok: valid,
       msg: valid ? "User accepted" : "Wrong username or password",
       data: valid ? user.fullname : null
     });
   } catch (error) {
-    res.status(400).send({
+    return res.status(500).send({
       ok: false,
       msg: error.toString(),
     });
