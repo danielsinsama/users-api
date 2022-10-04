@@ -7,7 +7,6 @@ const config = {
   database: process.env.DBNAME,
   user: process.env.DBUSER,
   password: process.env.DBPASSWORD,
-  
 };
 const pool = mysql.createPool(config);
 
