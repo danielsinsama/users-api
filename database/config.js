@@ -1,14 +1,14 @@
 const dotenv = require('dotenv')
 const mysql = require("mysql2");
-const config = {
-  host: "movistardb.cjcmv3tc2pyq.us-east-1.rds.amazonaws.com",
-  port: 3306,
-  database: "interview_db",
-  user: "interview",
-  password: "interview123",
-};
-// console.log('config',process.env);
 dotenv.config()
+const config = {
+  host: process.env.DBHOST,
+  port: process.env.DBPORT,
+  database: process.env.DBNAME,
+  user: process.env.DBUSER,
+  password: process.env.DBPASSWORD,
+  
+};
 const pool = mysql.createPool(config);
 
-module.exports = {pool}
+module.exports = {pool} 
