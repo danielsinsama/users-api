@@ -1,0 +1,18 @@
+{
+	"plugins": ["jsdoc-http-plugin"],
+	"source": {
+		"include": ["controllers","middlewares","utils","database","routes"],
+		"includePattern": ".js$",
+		"excludePattern": "(node_modules|docs)"
+	},
+	"templates": {
+		"cleverLinks": false,
+		"monospaceLinks": false
+	},
+	"opts": {
+		"recurse": "true",
+		"destination": "./docs",
+		"template": "node_modules/clean-jsdoc-theme",
+		"readme": "./README.md"
+	}
+}

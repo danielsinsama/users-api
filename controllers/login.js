@@ -1,5 +1,18 @@
 const { selectUserByUsername } = require('../services/users')
 const { hash } = require("../utils/crypto");
+//@ts-check
+
+/**
+ * Módulo con los métodos respectivos a la autenticación de un usuario
+ * @module LoginController
+ */
+
+/**
+ * Esta función se encarga loguear un usuario, verificando que esté en la base de datos, y cuyos datos coincidan con los datos almacenados
+ * @param {object} req Es la petición a recibir del frontend, en este caso los datos del usuario a loguear (username,password)
+ * @param {object} res Es la respuesta que debemos brindar, en este caso un objeto con información del resultado
+ * @returns {any}
+ */
 const loginController = async (req, res) => {
   const { body } = req;
   try {
