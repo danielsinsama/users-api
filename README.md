@@ -14,5 +14,5 @@ Ejecutar este comando general:
 ``npm run start``
 
 ## Para visualizar la documentación
-Se utilizó JSDoc, para la doucmentación de esta prueba, y se desarrolló con este comando:
+Se utilizó JSDoc, para la documentación de esta prueba, y se desarrolló con este comando:
 ``npm run docs``
